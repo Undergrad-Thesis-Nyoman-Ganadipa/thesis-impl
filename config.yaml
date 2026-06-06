@@ -1,0 +1,23 @@
+gcp:
+  project_id: ta-driftmon-gana
+  dataset: driftmon
+  location: asia-southeast1
+
+model:
+  version: bert_768
+  embedding_dim: 768
+  layer: 12
+  reference_set_id: ref_agnews_v1
+
+driftlens:
+  training_labels: [0, 1, 2]
+  drift_labels: [3]
+  batch_n_pc: 150
+  per_label_n_pc: 75
+  window_size: 500
+  n_th_samples: 200
+  threshold_sensitivity: 1
+  # Seeds the global numpy RNG before the fit so the (stochastic) threshold
+  # estimation is reproducible. Part of the fit config that identifies a baseline
+  # (baseline_id will hash this). Change it deliberately to force a new baseline.
+  seed: 42

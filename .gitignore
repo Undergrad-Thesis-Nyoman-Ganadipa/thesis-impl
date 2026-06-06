@@ -1,0 +1,20 @@
+# Secrets / local config
+.env
+# Service-account keys (repo is public — never commit credentials)
+**/gcp-key.json
+**/*-sa.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local artifacts (pre-Feast baseline output)
+**/artifacts/
+
+# Feast local state (registry + online store)
+shared/feature-store/data/
+
+# OS
+.DS_Store

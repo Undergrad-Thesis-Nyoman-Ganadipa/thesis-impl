@@ -1,0 +1,15 @@
+pyyaml
+numpy
+scipy
+scikit-learn
+pandas
+pyarrow
+h5py
+requests
+google-cloud-bigquery
+google-cloud-bigquery-storage
+db-dtypes
+confluent-kafka
+prometheus-client
+feast[redis,gcp]==0.49.0
+protobuf<6
