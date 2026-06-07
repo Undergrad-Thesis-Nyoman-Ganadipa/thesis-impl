@@ -1,0 +1,12 @@
+project: driftmon
+provider: local
+registry: data/registry.db
+offline_store:
+  type: bigquery
+  dataset: driftmon
+  project_id: ta-driftmon-gana
+  location: asia-southeast1
+online_store:
+  type: redis
+  connection_string: ${REDIS_CONNECTION_STRING}
+entity_key_serialization_version: 3
