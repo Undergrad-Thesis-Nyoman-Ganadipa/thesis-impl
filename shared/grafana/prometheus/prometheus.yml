@@ -1,0 +1,25 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  - job_name: node
+    static_configs:
+      - targets: ["10.148.0.6:9100"]
+        labels: { component: feast-server }
+      - targets: ["10.148.0.8:9100"]
+        labels: { component: grafana }
+      - targets: ["10.148.0.5:9100"]
+        labels: { component: redis }
+      - targets: ["10.148.0.4:9100"]
+        labels: { component: kafka }
+      - targets: ["10.148.0.7:9100"]
+        labels: { component: driftlens-computer }
+
+  - job_name: drift-detector
+    scrape_interval: 5s
+    static_configs:
+      - targets: ["10.148.0.7:8000"]
